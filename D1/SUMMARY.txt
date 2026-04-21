@@ -1,0 +1,43 @@
+================================================================================
+DELIVERABLE 1 (D1): DATA WAREHOUSE SETUP AND ETL
+================================================================================
+
+WHAT DID WE DO?
+We created the foundation of our fraud detection system by building a Data Warehouse.
+
+SIMPLE EXPLANATION:
+
+1. Created a Database
+   - We set up a new database called "dw_project" to store all our financial data
+
+2. Created Two Work Areas:
+   a) STAGING Area: Where raw data comes in
+      - Here we put messy, unorganized data straight from CSV files
+      - Tables: stg_user, stg_accounts, stg_transaction_type, stg_behavior_risk
+      
+   b) DW (Data Warehouse) Area: Where clean organized data lives
+      - This is where we store cleaned and organized data
+
+3. Built Dimension Tables (The Who, What, Where, When)
+   - dim_customer: Information about customers and merchants
+   - dim_merchant: Details of each merchant
+   - dim_transaction_type: Types of transactions and their locations
+   - dim_behavior_risk: Risk scores and behavior patterns
+   - dim_date: Calendar information for time-based analysis
+
+4. Built Fact Table (The Main Table)
+   - fact_transactions: The central table containing all transactions with links to dimensions
+   - This is where transactions are recorded with amounts, fraud flags, and who was involved
+
+WHY IS THIS IMPORTANT?
+- Organized data structure = faster analysis
+- Easy to find fraud patterns
+- All data is in one place for reporting
+- We can now ask questions like "How much fraud happens each month?"
+
+FILES IN THIS FOLDER:
+- 1.sql: Creates database and staging tables
+- ELT.sql: Extract, Load, Transform approach
+- ETL.sql: Extract, Transform, Load approach
+
+RESULT: A clean, organized database ready for analysis!

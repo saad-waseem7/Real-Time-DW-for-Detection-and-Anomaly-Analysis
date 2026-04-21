@@ -1,0 +1,60 @@
+================================================================================
+DELIVERABLE 3 (D3): DATABASE INDEXING AND OPTIMIZATION
+================================================================================
+
+WHAT DID WE DO?
+We made the database faster by adding special "shortcuts" called indexes.
+
+SIMPLE EXPLANATION:
+
+1. What is an Index?
+   Think of it like a book's index:
+   - Instead of reading entire book to find a topic, you check the index first
+   - It tells you exactly which pages to go to
+   - Same concept for databases!
+
+2. B-Tree Index
+   We added an index on the "amount" column:
+   
+   - Helps find transactions in a specific price range quickly
+   - Example: "Show all transactions between $5,000 and $10,000"
+   - Works like alphabetical sorting in a dictionary
+   
+   Test Results:
+   - Without index: Slow (scans all rows)
+   - With index: Fast (goes directly to relevant rows)
+
+3. Bitmap Index
+   We added an index on the "is_fraud" column:
+   
+   - Helps identify fraud vs normal transactions quickly
+   - Creates a special binary map (like true/false checklist)
+   - Super fast for boolean (yes/no) questions
+   
+   Test Results:
+   - Without index: Scans every row
+   - With index: Finds fraud instantly
+
+4. Combined Queries
+   We tested complex queries using multiple indexes:
+   - "Find fraudulent transactions over $10,000"
+   - Uses both fraud index AND amount index together
+   - Much faster than before!
+
+5. DSS Queries (Decision Support)
+   Complex analytical queries that:
+   - Join multiple dimension tables
+   - Group by multiple fields (date, region, merchant, device)
+   - Calculate fraud rates and statistics
+   - With indexes: Runs in seconds instead of minutes!
+
+RESULTS:
+- Queries run 10-100x faster
+- Can handle large datasets efficiently
+- Users get instant results
+- System can support many users at once
+
+FILES IN THIS FOLDER:
+- Indexing.sql: Creates indexes and tests them
+
+BENEFIT: Lightning-fast database performance for fraud detection!

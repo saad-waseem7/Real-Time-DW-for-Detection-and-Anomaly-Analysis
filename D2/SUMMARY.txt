@@ -1,0 +1,61 @@
+================================================================================
+DELIVERABLE 2 (D2): QUERY PERFORMANCE AND ANALYTICS
+================================================================================
+
+WHAT DID WE DO?
+We tested how the database performs with complex queries and created fast analytical reports.
+
+SIMPLE EXPLANATION:
+
+1. Join Performance Testing
+   We tested 3 different ways the database can combine tables:
+   
+   a) Nested Loop Join
+      - Like comparing two lists manually, one by one
+      - Slow but works for small datasets
+      
+   b) Sort Merge Join
+      - Sort both lists first, then compare
+      - Medium speed, useful when data is already sorted
+      
+   c) Hash Join
+      - Creates a quick reference map for matching
+      - Fastest method for large datasets
+
+2. OLAP Queries (Business Reports)
+   We created questions that show business insights:
+   
+   - Fraud rate by location region
+     "Which areas have the most fraud?"
+     
+   - Monthly fraud trends
+     "Is fraud increasing or decreasing over time?"
+     
+   - Device type analysis
+     "Which devices are used in fraud most often?"
+     
+   - Risk bucket analysis
+     "How much fraud happens in low/medium/high risk customers?"
+     
+   - Daily transaction volumes
+     "How many transactions happen each day?"
+
+3. MOLAP (Materialized OLAP)
+   - Pre-calculated views that store results
+   - Instead of calculating every time, just read stored results
+   - Much faster for repeated queries
+   - Like keeping a summary sheet instead of recalculating each time
+
+RESULTS:
+- Know which join method is fastest
+- Get quick answers to business questions
+- Pre-calculated reports run instantly
+- Understand fraud patterns by region, time, device, and customer risk
+
+FILES IN THIS FOLDER:
+- Join-Performance.sql: Tests different join methods
+- OLAP.sql: Regular analytical queries
+- MOLAP.sql: Pre-calculated materialized views
+- Justification.sql: Explains why these queries matter
+
+BENEFIT: Fast analytical insights for fraud detection!
