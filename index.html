@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection Data Warehouse</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        main {
+            padding: 40px 30px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .emoji {
+            font-size: 1.3em;
+        }
+
+        ul, ol {
+            margin-left: 25px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .steps {
+            background: #f0f4ff;
+            padding: 25px;
+            border-radius: 5px;
+            border-left: 5px solid #667eea;
+        }
+
+        .steps ol {
+            margin-left: 30px;
+        }
+
+        .steps li {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .highlight {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            border-left: 4px solid #ffc107;
+        }
+
+        .highlight strong {
+            color: #856404;
+        }
+
+        footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        .tech-list {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .tech-badge {
+            background: #667eea;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .folder-structure {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            margin-top: 15px;
+            overflow-x: auto;
+        }
+
+        .folder-item {
+            padding: 8px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .folder-item:last-child {
+            border-bottom: none;
+        }
+
+        .folder-name {
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .folder-desc {
+            color: #666;
+            margin-left: 20px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            main {
+                padding: 20px 15px;
+            }
+
+            section h2 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Fraud Detection Data Warehouse</h1>
+            <p>Detect fraud, analyze patterns, and prevent financial losses</p>
+        </header>
+
+        <main>
+            <!-- Overview Section -->
+            <section>
+                <h2><span class="emoji">📌</span>Overview</h2>
+                <p>A system that detects fraudulent financial transactions, organizes data, and shows insights through visual dashboards. Perfect for banks and payment companies who want to catch fraud in real-time.</p>
+            </section>
+
+            <!-- What It Does -->
+            <section>
+                <h2><span class="emoji">🎯</span>What It Does</h2>
+                <ul>
+                    <li><strong>Identifies suspicious transactions</strong> automatically</li>
+                    <li><strong>Organizes messy data</strong> into clear structure</li>
+                    <li><strong>Analyzes fraud patterns</strong> by region, time, and device</li>
+                    <li><strong>Creates interactive dashboards</strong> for business users</li>
+                </ul>
+            </section>
+
+            <!-- Tech Stack -->
+            <section>
+                <h2><span class="emoji">🛠️</span>Technology Stack</h2>
+                <div class="tech-list">
+                    <span class="tech-badge">PostgreSQL</span>
+                    <span class="tech-badge">pgAdmin4</span>
+                    <span class="tech-badge">Power BI</span>
+                    <span class="tech-badge">SQL</span>
+                </div>
+            </section>
+
+            <!-- Project Folders -->
+            <section>
+                <h2><span class="emoji">📁</span>Project Folders</h2>
+                <div class="folder-structure">
+                    <div class="folder-item">
+                        <span class="folder-name">📂 D1/</span>
+                        <span class="folder-desc">Database setup and table structure</span>
+                    </div>
+                    <div class="folder-item">
+                        <span class="folder-name">📂 D2/</span>
+                        <span class="folder-desc">Analysis queries and reports</span>
+                    </div>
+                    <div class="folder-item">
+                        <span class="folder-name">📂 D3/</span>
+                        <span class="folder-desc">Database speed optimization</span>
+                    </div>
+                    <div class="folder-item">
+                        <span class="folder-name">📂 D4/</span>
+                        <span class="folder-desc">Power BI dashboards and visualizations</span>
+                    </div>
+                    <div class="folder-item">
+                        <span class="folder-name">📂 csv files/</span>
+                        <span class="folder-desc">Sample financial transaction data</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Start -->
+            <section>
+                <h2><span class="emoji">🚀</span>Quick Start</h2>
+                <div class="steps">
+                    <ol>
+                        <li>Install PostgreSQL and pgAdmin4</li>
+                        <li>Load CSV files into database</li>
+                        <li>Run SQL scripts from D1 folder to create tables</li>
+                        <li>Check results in Power BI dashboard (D4)</li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Key Features -->
+            <section>
+                <h2><span class="emoji">⭐</span>Key Features</h2>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Fraud Detection</h3>
+                        <p>Automatically identifies suspicious transactions and patterns</p>
+                    </div>
+                    <div class="card">
+                        <h3>Data Organization</h3>
+                        <p>Converts messy data into organized warehouse structure</p>
+                    </div>
+                    <div class="card">
+                        <h3>Real-time Analysis</h3>
+                        <p>Analyzes fraud by region, time, device, and user behavior</p>
+                    </div>
+                    <div class="card">
+                        <h3>Interactive Dashboards</h3>
+                        <p>Visual reports for easy business decision making</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Learn More -->
+            <section>
+                <h2><span class="emoji">📖</span>Learn More</h2>
+                <div class="highlight">
+                    <strong>📝 Each folder has a SUMMARY.txt file</strong>
+                    <p style="margin-top: 10px; color: #333;">Each folder (D1, D2, D3, D4) contains a SUMMARY.txt file explaining what was done in simple, easy-to-understand language. Perfect for beginners!</p>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p><strong>Fraud Detection Data Warehouse Project</strong></p>
+            <p>Start detecting fraud and analyzing transaction patterns today! 🔍</p>
+        </footer>
+    </div>
+</body>
+</html>
